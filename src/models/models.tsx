@@ -13,7 +13,8 @@ export type UserSubmitForm = {
 export enum ResponseStatus {
     CODE_USED = 0,
     REG_SUCCESS = 1,
-    REG_WON = 2
+    REG_WON = 2,
+    DONT_EXIST = 3
 };
 
 export type UserFormResponse = {
@@ -24,5 +25,6 @@ export enum CONTENT {
     REGISTER = 0,
     CODE_USED = 1,
     REGISTER_SUCCESS = 2,
-    WON_PRIZE = 3
+    WON_PRIZE = 3,
+    DONT_EXIST = 4
 }

@@ -8,6 +8,7 @@ import { UserSubmitForm, UserFormResponse, ResponseStatus, CONTENT }  from '../m
 import RegSuccess from './ContentRegSuccess';
 import RegFailed from './ContentRegFailed';
 import RegPrize from './ContentRegPrize';
+import RegInvalid from './ContentRegInvalid';
 
 const RegForm: React.FC = () => {
 
@@ -22,6 +23,9 @@ const RegForm: React.FC = () => {
     }
     if(resp.result === ResponseStatus.REG_WON) {
       setContent(CONTENT.WON_PRIZE);
+    }
+    if(resp.result === ResponseStatus.DONT_EXIST) {
+      setContent(CONTENT.DONT_EXIST);
     }
   }
 
@@ -49,7 +53,8 @@ const RegForm: React.FC = () => {
   const logEvents = {
     0: 'register_code_used',
     1: 'register_success',
-    2: 'register_won'
+    2: 'register_won',
+    3: 'register_code_do_not_exist'
   }
   const handleFormSubmit = (data: UserSubmitForm) => {
     GA('event', 'register_start');
@@ -99,6 +104,8 @@ const RegForm: React.FC = () => {
         { currentContent === CONTENT.REGISTER_SUCCESS && <RegSuccess buttonAction={tryAgain}></RegSuccess> }
         { currentContent === CONTENT.CODE_USED && <RegFailed buttonAction={tryAgain}></RegFailed> }
         { currentContent === CONTENT.WON_PRIZE && <RegPrize buttonAction={tryAgain} prizeNumber={1}></RegPrize> }
+        { currentContent === CONTENT.DONT_EXIST && <RegInvalid buttonAction={tryAgain}></RegInvalid> }
+
       </form>
       <div className='caps-info'>
         Koodi leiad <span>punase</span> korgi alt
