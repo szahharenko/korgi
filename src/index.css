@@ -1,0 +1,101 @@
+html {
+  --font-size: 22px;
+  --input-height: 40px;
+  --base-space: 1em;
+  --light-green: #e0f8e6;
+  --blue: #458CC2;
+  --light-blue: #7CE4FD;
+  --green: #50BC00;
+  --error: #E60A14;
+  --base-bg: #fff;
+  --view-animation-time: 2s;
+}
+@media only screen and (max-width: 600px) {
+  html {
+    --font-size: 24px;
+  }
+}
+
+html, body, input, textarea, select, button {
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: normal
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: var(--blue);
+}
+select,
+textarea,
+input[type=tel],
+input[type=email],
+input[type=password],
+input[type=text] {
+  border: solid 1px transparent;
+  padding: 0 calc(var(--base-space) / 2);
+  background: var(--base-bg);
+  outline: none;
+  height: var(--input-height);
+  line-height: var(--input-height);
+  box-sizing: border-box;
+  margin: 0 0 calc(var(--base-space)/2);
+  color: var(--blue);
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+}
+textarea:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus {
+  background: var(--base-bg);
+  border-color: var(--blue);
+}
+button {
+  height: var(--input-height);
+  line-height: var(--input-height);
+  box-sizing: border-box;
+  padding: 0 var(--base-space);
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+  outline: none;
+  background-color: var(--blue);
+  color: var(--base-bg);
+  box-sizing: content-box;
+  text-transform: uppercase;
+}
+button.button-secondary {
+  background-color: var(--base-bg);
+  color: var(--blue);
+  border: solid 2px var(--blue);
+}
+button.button-small {
+  height: calc( var(--input-height) / 1.4);
+  line-height: calc( var(--input-height) / 1.4);
+  padding: 0 calc(var(--base-space) / 3);
+  font-size: 80%;
+}
+
+@media only screen and (max-width: 600px) {
+  button.button-small {
+    height: calc( var(--input-height) / 2);
+    line-height: calc( var(--input-height) / 2);
+    font-size: 60%;
+  }
+}
+
+button[type=submit] {
+  background: var(--base-blue);
+  color: var(--base-background);
+}
+button:hover,
+button:focus {
+  filter: brightness(var(--hover-brightness));
+}
