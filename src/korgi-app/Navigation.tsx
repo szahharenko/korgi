@@ -9,7 +9,7 @@ const Navigation: React.FC = () => {
       <ul className='navigation__menu'>
           <li><a href="#prize" onClick={ e => smoothScroll(e, 'prize') }>Auhinnad</a></li>
           <li><a href="#winz" onClick={e => smoothScroll(e, 'winz')}>Võitjad</a></li>
-          <li><a href="#rules" onClick={e => smoothScroll(e, 'rules')}>Tingimised</a></li>
+          <li><a href="#rules" onClick={e => smoothScroll(e, 'rules')}>Tingimused</a></li>
       </ul>
     </div>
   );

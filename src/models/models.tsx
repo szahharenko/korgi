@@ -12,19 +12,15 @@ export type UserSubmitForm = {
 
 export enum ResponseStatus {
     CODE_USED = 0,
-    REG_SUCCESS = 1,
-    REG_WON = 2,
-    DONT_EXIST = 3
+    DONT_EXIST = 1,
+    REG_SUCCESS = 2,
+    REG_WON = 3
 };
-
-export type UserFormResponse = {
-    result: ResponseStatus;
-};
-
-export enum CONTENT {
-    REGISTER = 0,
-    CODE_USED = 1,
-    REGISTER_SUCCESS = 2,
-    WON_PRIZE = 3,
-    DONT_EXIST = 4
+export interface PrizeDetails {
+    prize_type: 0 | 2 | 1 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+    prize_name: string
 }
+export interface UserFormResponse {
+    result: ResponseStatus
+    prize: PrizeDetails
+};

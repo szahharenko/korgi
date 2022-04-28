@@ -7,9 +7,9 @@ interface Props {
 const RegSuccess: React.FC<Props> = ({buttonAction}) => {
   return (
     <div className='reg-result'>
-      <div>
-        <h1 className='caps'>Oih! Kahjuks selle korgi all auhinda peidus ei ole.</h1>
-        <p>Aga järgmise all võib-olla on!</p>
+      <div className='no-luck'>
+        <h2>Oih! Kahjuks selle korgi all auhinda peidus ei ole.</h2>
+        <p><strong>Aga järgmise all võib-olla on!</strong></p>
         <div className='form-submit'>
           <button onClick={() => buttonAction()}>Registreeri uus kork</button>
         </div>

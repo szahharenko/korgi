@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { postData, GA, smoothScroll } from '../tools/tools';
 import { API } from '../models/models';
-import { UserSubmitForm, UserFormResponse, ResponseStatus, CONTENT }  from '../models/models'
+import { UserSubmitForm, UserFormResponse, ResponseStatus }  from '../models/models'
 import RegSuccess from './ContentRegSuccess';
 import RegFailed from './ContentRegFailed';
 import RegPrize from './ContentRegPrize';
@@ -12,21 +12,12 @@ import RegInvalid from './ContentRegInvalid';
 
 const RegForm: React.FC = () => {
 
-  const [currentContent, setContent] = useState<CONTENT>(CONTENT.REGISTER);
+  const [currentContent, setContent] = useState<ResponseStatus | undefined>(undefined);
+  const [currentPrize, setPrize] = useState<ResponseStatus | undefined>(undefined);
 
   const handleRegResult = (resp: UserFormResponse) : void => {
-    if(resp.result === ResponseStatus.REG_SUCCESS) {
-      setContent(CONTENT.REGISTER_SUCCESS);
-    }
-    if(resp.result === ResponseStatus.CODE_USED) {
-      setContent(CONTENT.CODE_USED);
-    }
-    if(resp.result === ResponseStatus.REG_WON) {
-      setContent(CONTENT.WON_PRIZE);
-    }
-    if(resp.result === ResponseStatus.DONT_EXIST) {
-      setContent(CONTENT.DONT_EXIST);
-    }
+    setContent(resp.result);
+    setPrize(resp?.prize?.prize_type);
   }
 
   const validationSchema = Yup.object().shape({
@@ -48,7 +39,7 @@ const RegForm: React.FC = () => {
   }
 
   const tryAgain = () => {
-    setContent(CONTENT.REGISTER);
+    setContent(undefined);
   }
   const logEvents = {
     0: 'register_code_used',
@@ -63,11 +54,14 @@ const RegForm: React.FC = () => {
         GA('event', logEvents[resp.result]);
         handleRegResult(resp);
       })
-      .catch(() => handleError())
+      .catch((e) => {
+        console.log(e);
+        handleError()
+      })
   }
 
   return (
-    <div className={`result ${currentContent === CONTENT.REGISTER ? 'registration' : 'reveal'}`}>
+    <div className={`result ${currentContent === undefined ? 'registration' : 'reveal'}`}>
       <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))} method="post">
         <div className='fields'>
           <div className="double-row">
@@ -103,10 +97,10 @@ const RegForm: React.FC = () => {
             <button>OSALEN LOOSIMISES</button>
           </div>
         </div>
-        { currentContent === CONTENT.REGISTER_SUCCESS && <RegSuccess buttonAction={tryAgain}></RegSuccess> }
-        { currentContent === CONTENT.CODE_USED && <RegFailed buttonAction={tryAgain}></RegFailed> }
-        { currentContent === CONTENT.WON_PRIZE && <RegPrize buttonAction={tryAgain} prizeNumber={1}></RegPrize> }
-        { currentContent === CONTENT.DONT_EXIST && <RegInvalid buttonAction={tryAgain}></RegInvalid> }
+        { currentContent === ResponseStatus.REG_SUCCESS && <RegSuccess buttonAction={tryAgain}></RegSuccess> }
+        { currentContent === ResponseStatus.REG_WON && currentPrize !== undefined && <RegPrize buttonAction={tryAgain} prizeNumber={currentPrize}></RegPrize> }
+        { currentContent === ResponseStatus.CODE_USED && <RegFailed buttonAction={tryAgain}></RegFailed> }
+        { currentContent === ResponseStatus.DONT_EXIST && <RegInvalid buttonAction={tryAgain}></RegInvalid> }
 
       </form>
       <div className='caps-info'>

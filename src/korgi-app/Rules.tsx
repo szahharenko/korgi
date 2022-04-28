@@ -38,9 +38,9 @@ const Rules: React.FC = () => {
         12.	Loosimised toimuvad automaatselt. Kampaania vältel lisatakse iga auhind juhuslikul ajahetkel võidetavate toodete hulka ning kui koodi sisestuse ajahetkel on auhinnapajas võidetavaid tooteid, seostatakse auhind võiduga.<br/>
         13.	Kampaania auhindadeks on:<br/>
         - Vichy 1 plokk toodet, erinevad maitsed, ühes plokis 6 tk 1,5L PET pudelit (273 TK);<br/>
-        - MyFitness ühekordne külastus (50 TK);<br/>
+        - 24-7fitness.com (pääse 2tk) (50 TK);<br/>
         - Apollo kinopilet (100 TK);<br/>
-        - Membo puuviljakast (30 TK);<br/>
+        - Vitamiinikulleri  puuviljakast (30 TK);<br/>
         - Vichy sokid (50 TK);<br/>
         - Vichy saunalina (30 TK);<br/>
         - Vichy telk (10 TK);<br/>

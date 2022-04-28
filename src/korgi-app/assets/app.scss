@@ -234,12 +234,97 @@ html, body {
       padding-top: var(--base-space);
       padding-bottom: var(--base-space);
       box-sizing: border-box;
+      display: flex;
+      align-items: flex-end;
+      color: var(--blue);
+
+      .no-luck {
+        text-align: center;
+        h2 {
+          line-height: 1.1;
+        }
+        .form-submit {
+          padding-top: var(--base-space);
+        }
+      }
+
+      > div {
+        position: relative;
+      }
+
+      .form-submit, p, h2 {
+        z-index: 2;
+        position: relative;
+      }
+
+      .prize-preview {
+        position:absolute;
+        top:0;
+        right:0;
+        width:50%;
+        height: calc(100% - 54px);
+        background: center center no-repeat;
+        background-size: auto 70% ;
+        z-index: 1;
+
+        &.prize-0 {
+          background-image: url(./auhind_kell.png);
+        }
+        &.prize-1 {
+          background-image: url(./auhind_vesi.png);
+        }
+        &.prize-2 {
+          background-image: url(./auhind_fitness.png);
+        }
+        &.prize-3 {
+          background-image: url(./auhind_apollo.png);
+        }
+        &.prize-4 {
+          background-image: url(./auhind_kast.png);
+        }
+        &.prize-5 {
+          background-image: url(./auhind_sokid.png);
+        }
+        &.prize-6 {
+          background-image: url(./auhind_ratik.png);
+        }
+        &.prize-7 {
+          background-image: url(./auhind_telk.png);
+        }
+        &.prize-8 {
+          background-image: url(./auhind_kott.png);
+        }
+        &.prize-9 {
+          background-image: url(./auhind_kell.png);
+        }
+        &.prize-10 {
+          background-image: url(./auhind_estravel.png);
+        }
+      }
+
+      h2, p {
+        margin-top: 0;
+        margin-bottom: calc(var(--base-space)/2);
+      }
+      h2 + p {
+        font-weight: 500;
+      }
+
+      > div {
+        flex: 1;
+      }
+
       .code-used {
         display: block;
         width: 145px;
         height: 145px;
         margin: 0 auto var(--base-space) auto;
+        + h2 {
+          font-size: 100%;
+          text-align: center;
+        }
       }
+
     }
     .fields {
       .form-field {
@@ -357,6 +442,43 @@ html, body {
       border-radius: 0%;
     }
   }
+
+  &.prize-1 {
+    &::before {
+      background-image: url(./auhind_vesi.png);
+    }
+  }
+  &.prize-2 {
+    &::before {
+      background-image: url(./auhind_fitness.png);
+    }
+  }
+  &.prize-3 {
+    &::before {
+      background-image: url(./auhind_apollo.png);
+    }
+  }
+  &.prize-4 {
+    &::before {
+      background-image: url(./auhind_kast.png);
+    }
+  }
+  &.prize-5 {
+    &::before {
+      background-image: url(./auhind_sokid.png);
+    }
+  }
+  &.prize-6 {
+    &::before {
+      background-image: url(./auhind_ratik.png);
+    }
+  }
+  &.prize-7 {
+    &::before {
+      background-image: url(./auhind_telk.png);
+    }
+  }
+
 }
 .prizes__table {
   text-align: center;
@@ -409,7 +531,6 @@ html, body {
   &--list {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
     font-size: 120%;
     > div {

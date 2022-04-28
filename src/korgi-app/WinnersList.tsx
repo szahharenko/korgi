@@ -15,17 +15,17 @@ interface WinnersResponse {
 }
 
 const prizeNames: { [key in prizeNumber] : string } = {
-  '0' : 'Demo prize',
-  '1' : '1',
-  '2' : '2',
-  '3' : '3',
-  '4' : '4',
-  '5' : '5',
-  '6' : '6',
-  '7' : '7',
-  '8' : '8',
-  '9' : '9',
-  '10': '10'
+  0: 'Demo auhind',
+  1: 'Vichy plokk',
+  2: '24-7fitness.com pääse',
+  3: 'Apollo kinopilet',
+  4: 'Vitamiinikulleri  puuviljakast',
+  5: 'Vichy sokid',
+  6: 'Vichy saunalina',
+  7: 'Vichy telk',
+  8: 'Falljarven seljakott',
+  9: 'Apple Watch SE',
+  10: 'Estraveli 2000€ kinkekaart'
 }
 
 const WinnersList: React.FC = () => {
@@ -34,7 +34,7 @@ const WinnersList: React.FC = () => {
   const drawWinners = (prizeType: prizeNumber) => {
     const filtered = winners.filter( w => w.prize_type === prizeType);
     if(filtered.length) {
-      return <div><h3>{prizeNames[prizeType]}</h3>{ filtered.map( (winner, i) => <span>{winner.name} {winner.surname}<br/></span>) }</div>
+      return <div><h3>{prizeNames[prizeType]}</h3>{ filtered.map( (winner, i) => <span key={i}>{winner.name} {winner.surname}<br/></span>) }</div>
     }
     return <></>;
   }
