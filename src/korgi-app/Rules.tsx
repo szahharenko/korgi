@@ -5,13 +5,13 @@ import { smoothScroll  } from '../tools/tools';
 const Rules: React.FC = () => {
   return (
     <div className='footer rules-container'>
-      <h1>KAMPAANIA TINGIMUSED</h1>
+      <h1>Kampaania tingimused</h1>
       <div className='rules-overflow'>
         1.	Kampaania ja auhinnad korraldab: Saku Õlletehase AS, Tallinna mnt 2, Saku, Eesti; registrikood: 10030278; telefon: +372 6508 400, e-post: saku@saku.ee (edaspidi korraldaja). <br/>
         2.	Kampaania nimetus: Iga sõõm loeb<br/>
         3.	Kampaania ala: Eesti Vabariik<br/>
         4.	Kampaania periood: 01.05.–31.07.2022<br/>
-        5.	Kampaania võidufond: 7000 eurot<br/>
+        5.	Kampaania võidufond: <strong>7000 eurot</strong><br/>
         6.	Kampaania läbiviimise kord on kehtestatud korraldaja poolt käesolevates reeglites. Kõik korraldaja otsused kampaania läbiviimisel on lõplikud ning kõigile kampaanias osalejatele kohustuslikud. Korraldaja jätab õiguse reegleid muuta või täiendada, avaldades vastava teabe reeglite täiendusena.  <br/>
         7.	Kampaanias osalevad järgmised Vichy tooted: <br/>
         - Vichy Mineral Water 0,5L PET;<br/>

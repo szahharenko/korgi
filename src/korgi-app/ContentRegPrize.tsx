@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {
   buttonAction: Function,
-  prizeNumber: 1 | 2 | 3 | 4 | 5 | 6
+  prizeNumber: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 }
 
 const RegPrize: React.FC<Props> = ({buttonAction, prizeNumber}) => {

@@ -17,7 +17,7 @@ html {
 }
 
 html, body, input, textarea, select, button {
-  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-family: 'Prompt', Tahoma, sans-serif;
   font-weight: 400;
   font-size: var(--font-size);
   line-height: normal
@@ -98,4 +98,8 @@ button[type=submit] {
 button:hover,
 button:focus {
   filter: brightness(var(--hover-brightness));
+}
+
+.content {
+  overflow: hidden;
 }

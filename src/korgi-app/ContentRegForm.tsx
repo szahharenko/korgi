@@ -70,13 +70,15 @@ const RegForm: React.FC = () => {
     <div className={`result ${currentContent === CONTENT.REGISTER ? 'registration' : 'reveal'}`}>
       <form onSubmit={handleSubmit((data: UserSubmitForm) => handleFormSubmit(data))} method="post">
         <div className='fields'>
-          <div className='form-field'>
-            <input type="text" {...register('firstname')} className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} placeholder='Eesnimi' />
-            { errors.firstname && <span className='error-message'>{errors.firstname.message}</span>}
-          </div>
-          <div className='form-field'>
-            <input type="text" {...register('lastname')} className={`form-control ${errors.lastname ? 'is-invalid' : ''}`} placeholder='Perenimi' />
-            { errors.lastname && <span className='error-message'>{errors.lastname.message}</span>}
+          <div className="double-row">
+            <div className='form-field'>
+              <input type="text" {...register('firstname')} className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} placeholder='Eesnimi' />
+              { errors.firstname && <span className='error-message'>{errors.firstname.message}</span>}
+            </div>
+            <div className='form-field'>
+              <input type="text" {...register('lastname')} className={`form-control ${errors.lastname ? 'is-invalid' : ''}`} placeholder='Perenimi' />
+              { errors.lastname && <span className='error-message'>{errors.lastname.message}</span>}
+            </div>
           </div>
           <div className='form-field'>
             <input type="tel" {...register('phoneNumber')} className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`} placeholder='Telefoninumber' />
