@@ -18,7 +18,7 @@ const PrizeSection: React.FC<Props> = () => {
         </div>
         <div>
           <span className='prize prize-6'></span>
-          <strong>30x</strong> Vichy saunalina
+          <strong>30x</strong> Vichy rätik
         </div>
         <div>
           <span className='prize prize-5'></span>
@@ -28,15 +28,15 @@ const PrizeSection: React.FC<Props> = () => {
       <div className='prizes__table prizes__table--small'>
         <div>
           <span className='prize prize-4'></span>
-          <strong>30x</strong> Membo<br/>puuviljakast
+          <strong>30x</strong> Vitamiinikulleri<br/>puuviljakast
         </div>
         <div>
           <span className='prize prize-3'></span>
-          <strong>50x</strong> Apollo<br/>kinopilet
+          <strong>50x</strong> Apollo<br/>kinopilet kahele
         </div>
         <div>
           <span className='prize prize-2'></span>
-          <strong>50x</strong> 24-7fitness.com (pääse 2tk)
+          <strong>50x</strong> 24-7fitness.com<br/>külastus kahele
         </div>
         <div>
           <span className='prize prize-1'></span>

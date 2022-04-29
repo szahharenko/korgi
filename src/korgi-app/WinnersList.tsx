@@ -14,14 +14,14 @@ interface WinnersResponse {
   winners: Winners[],
 }
 
-const prizeNames: { [key in prizeNumber] : string } = {
+export const prizeNames: { [key in prizeNumber] : string } = {
   0: 'Demo auhind',
-  1: 'Vichy plokk',
-  2: '24-7fitness.com pääse',
-  3: 'Apollo kinopilet',
+  1: 'Plokk Vichy vett',
+  2: '24-7fitness.ee külastus kahele',
+  3: 'Apollo kinopilet kahele',
   4: 'Vitamiinikulleri  puuviljakast',
   5: 'Vichy sokid',
-  6: 'Vichy saunalina',
+  6: 'Vichy rätik',
   7: 'Vichy telk',
   8: 'Falljarven seljakott',
   9: 'Apple Watch SE',
