@@ -36,7 +36,7 @@ const PrizeSection: React.FC<Props> = () => {
         </div>
         <div>
           <span className='prize prize-2'></span>
-          <strong>50x</strong> 24-7fitness.com<br/>külastus kahele
+          <strong>50x</strong> 24-7fitness.ee<br/>külastus kahele
         </div>
         <div>
           <span className='prize prize-1'></span>
