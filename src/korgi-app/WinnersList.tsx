@@ -34,7 +34,7 @@ const WinnersList: React.FC = () => {
   const drawWinners = (prizeType: prizeNumber) => {
     const filtered = winners.filter( w => w.prize_type === prizeType);
     if(filtered.length) {
-      return <div><h3>{prizeNames[prizeType]}</h3>{ filtered.map( (winner, i) => <span key={i}>{winner.name} {winner.surname}<br/></span>) }</div>
+      return <div className={`type-${prizeType}`}><h3>{prizeNames[prizeType]}</h3>{ filtered.map( (winner, i) => <span key={i}>{winner.name} {winner.surname}<br/></span>) }</div>
     }
     return <></>;
   }
@@ -51,17 +51,17 @@ const WinnersList: React.FC = () => {
         <img src={WinnersTitle} alt=''/>
       </div>
       <div className='winners--list'>
-        { drawWinners('0') }
-        { drawWinners('1') }
-        { drawWinners('2') }
-        { drawWinners('3') }
-        { drawWinners('4') }
-        { drawWinners('5') }
-        { drawWinners('6') }
-        { drawWinners('7') }
-        { drawWinners('8') }
-        { drawWinners('9') }
         { drawWinners('10') }
+        { drawWinners('9') }
+        { drawWinners('8') }
+        { drawWinners('7') }
+        { drawWinners('6') }
+        { drawWinners('5') }
+        { drawWinners('4') }
+        { drawWinners('3') }
+        { drawWinners('2') }
+        { drawWinners('1') }
+        { drawWinners('0') }
       </div>
       <div className='winners--contact'>
         <h3>Võtame võitjatega ühendust</h3>

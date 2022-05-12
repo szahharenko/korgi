@@ -543,6 +543,12 @@ html, body {
         display: block;
         padding-left: var(--base-space);
       }
+      &.type-1 {
+        text-align: center;
+        span {
+          display: inline-block;
+        }
+      }
     }
   }
   &--contact {
