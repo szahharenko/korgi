@@ -9,8 +9,9 @@ const RegInvalid: React.FC<Props> = ({buttonAction}) => {
   return (
     <div className='reg-result'>
       <div>
-        <img className='code-used' src={FailedIcon} alt=''/>
-        <h2>Vale info...</h2>
+        <img className='code-used' style={{width:'100px',height:'100px'}} src={FailedIcon} alt=''/>
+        <h2>Oih! Midagi läks valesti.</h2>
+        <p style={{textAlign:'center'}}>Proovi uuesti või registreeri uus kork!</p>
         <div className='form-submit'>
           <button onClick={() => buttonAction()}>Proovi uuesti</button>
         </div>
