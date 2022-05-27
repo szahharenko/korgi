@@ -135,7 +135,7 @@ või 1,5 l Vichy toote, mille korgi all on    <strong>unikaalne trükitud loosik
     * Vichy telk (10 TK);
 </p>
 <p>
-    * Falljarven seljakott (10 TK);
+    * Fjällräven seljakott (10 TK);
 </p>
 <p>
     * Apple Watch SE GPS, 40mm Space Grey/Midnight, Regular (3 TK);

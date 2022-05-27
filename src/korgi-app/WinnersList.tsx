@@ -23,7 +23,7 @@ export const prizeNames: { [key in prizeNumber] : string } = {
   5: 'Vichy sokid',
   6: 'Vichy rätik',
   7: 'Vichy telk',
-  8: 'Falljarven seljakott',
+  8: 'Fjällräven seljakott',
   9: 'Apple Watch SE',
   10: 'Estraveli 2000€ kinkekaart'
 }
